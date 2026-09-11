@@ -1,0 +1,6 @@
+{
+  "name": "Vertical Green",
+  "description": "Plataforma IoT de monitoreo biófilo, control operativo y ciberseguridad para huertos verticales inteligentes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
