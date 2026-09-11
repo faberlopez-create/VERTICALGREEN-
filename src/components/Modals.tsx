@@ -518,30 +518,46 @@ export const SchematicsModal: React.FC<{
   );
 };
 
-// 9. SPEI Info Modal
+// 9. SPEI / PSE Colombia Info Modal
 export const SpeiInfoModal: React.FC<{
   isOpen: boolean;
   onClose: () => void;
 }> = ({ isOpen, onClose }) => {
   return (
-    <ModalWrapper isOpen={isOpen} onClose={onClose} title="Transferencia Bancaria / SPEI" icon="account_balance">
+    <ModalWrapper isOpen={isOpen} onClose={onClose} title="Transferencia Bancaria / PSE / Nequi" icon="account_balance">
       <div className="space-y-3 text-xs">
         <p className="text-on-surface-variant">
-          Puedes realizar el pago de tu membresía directamente mediante transferencia SPEI interbancaria:
+          Puedes realizar el pago o activación de tu membresía en pesos colombianos (COP) mediante PSE, Nequi o transferencia bancaria:
         </p>
 
         <div className="bg-surface-container-low p-3.5 rounded-xl border border-outline-variant/20 space-y-2">
           <div className="flex justify-between items-center">
-            <span className="text-outline">Banco Destino:</span>
-            <span className="font-bold text-primary">STP / BBVA México</span>
+            <span className="text-outline">Banco / Pasarela:</span>
+            <span className="font-bold text-primary">Bancolombia / PSE</span>
           </div>
           <div className="flex justify-between items-center">
-            <span className="text-outline">CLABE Interbancaria:</span>
-            <span className="font-mono font-bold text-secondary text-sm select-all">6461 8015 7092 8419 23</span>
+            <span className="text-outline">Tipo de Cuenta:</span>
+            <span className="font-semibold text-primary">Ahorros</span>
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="text-outline">Nº de Cuenta Bancolombia:</span>
+            <span className="font-mono font-bold text-secondary text-sm select-all">452-981726-34</span>
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="text-outline">Llave Nequi / Transfiya:</span>
+            <span className="font-mono font-bold text-secondary text-sm select-all">310 892 4156</span>
           </div>
           <div className="flex justify-between items-center">
             <span className="text-outline">Beneficiario:</span>
-            <span className="font-semibold text-primary">Vertical Green S.A.P.I. de C.V.</span>
+            <span className="font-semibold text-primary">Vertical Green Colombia S.A.S.</span>
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="text-outline">NIT:</span>
+            <span className="font-mono text-on-surface">901.482.319-1</span>
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="text-outline">Moneda:</span>
+            <span className="font-bold text-secondary">Pesos Colombianos (COP)</span>
           </div>
           <div className="flex justify-between items-center">
             <span className="text-outline">Concepto / Referencia:</span>
@@ -551,7 +567,7 @@ export const SpeiInfoModal: React.FC<{
 
         <button
           onClick={onClose}
-          className="w-full py-2.5 rounded-full bg-primary text-on-primary font-semibold text-xs mt-2"
+          className="w-full py-2.5 rounded-full bg-primary text-on-primary font-semibold text-xs mt-2 cursor-pointer"
         >
           Entendido
         </button>

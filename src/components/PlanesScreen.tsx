@@ -16,22 +16,22 @@ export const PlanesScreen: React.FC<PlanesScreenProps> = ({ onOpenSpei, onSubscr
   const [isSubmitting, setIsSubmitting] = useState(false);
   const savePaymentId = useId();
 
-  // Pricing calculations
-  const priceOasis = billingCycle === 'annual' ? '$7.99' : '$9.99';
-  const pricePro = billingCycle === 'annual' ? '$15.19' : '$18.99';
-  const periodOasis = billingCycle === 'annual' ? 'Facturado anualmente ($95.88/año)' : 'Facturado mes a mes';
-  const periodPro = billingCycle === 'annual' ? 'Facturado anualmente ($182.28/año)' : 'Facturado mes a mes';
+  // Pricing calculations en Pesos Colombianos (COP)
+  const priceOasis = billingCycle === 'annual' ? '$31.900 COP' : '$39.900 COP';
+  const pricePro = billingCycle === 'annual' ? '$59.900 COP' : '$74.900 COP';
+  const periodOasis = billingCycle === 'annual' ? 'Facturado anualmente ($382.800 COP/año)' : 'Facturado mes a mes';
+  const periodPro = billingCycle === 'annual' ? 'Facturado anualmente ($718.800 COP/año)' : 'Facturado mes a mes';
 
   const summaryPrice =
     selectedPlan === 'Semilla Esencial'
-      ? '$0.00'
+      ? '$0 COP'
       : selectedPlan === 'Oasis Urbano Inteligente'
       ? billingCycle === 'annual'
-        ? '$95.88 /año'
-        : '$9.99 /mes'
+        ? '$382.800 COP /año'
+        : '$39.900 COP /mes'
       : billingCycle === 'annual'
-      ? '$182.28 /año'
-      : '$18.99 /mes';
+      ? '$718.800 COP /año'
+      : '$74.900 COP /mes';
 
   // Calculate trial end date (14 days from now)
   const getTrialEndDate = () => {
@@ -485,7 +485,7 @@ export const PlanesScreen: React.FC<PlanesScreenProps> = ({ onOpenSpei, onSubscr
                 <span className="material-symbols-outlined text-secondary" data-icon="account_balance">
                   account_balance
                 </span>
-                ¿Prefieres transferencia bancaria o SPEI?
+                ¿Prefieres transferencia bancaria, PSE o Nequi?
               </span>
               <button
                 type="button"
@@ -553,11 +553,11 @@ export const PlanesScreen: React.FC<PlanesScreenProps> = ({ onOpenSpei, onSubscr
                   </span>
                   Kit de Bienvenida de Semillas + Sustrato
                 </span>
-                <span className="font-label font-bold uppercase">Gratis ($25 valor)</span>
+                <span className="font-label font-bold uppercase">Gratis ($95.000 COP valor)</span>
               </div>
               <div className="flex justify-between items-center text-xs text-outline">
                 <span>Período de Prueba (14 Días)</span>
-                <span className="font-label tabular-nums">-$0.00</span>
+                <span className="font-label tabular-nums">-$0 COP</span>
               </div>
               <div className="pt-3 border-t border-outline-variant/30 flex justify-between items-baseline">
                 <div>
@@ -566,7 +566,7 @@ export const PlanesScreen: React.FC<PlanesScreenProps> = ({ onOpenSpei, onSubscr
                     Primer cobro el <span className="font-semibold">{getTrialEndDate()}</span>
                   </span>
                 </div>
-                <span className="font-label text-2xl font-bold text-secondary tabular-nums">$0.00 USD</span>
+                <span className="font-label text-2xl font-bold text-secondary tabular-nums">$0 COP</span>
               </div>
             </div>
           </div>

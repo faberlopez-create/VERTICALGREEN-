@@ -424,7 +424,7 @@ export const PerfilScreen: React.FC<PerfilScreenProps> = ({
                 <span className="font-headline font-bold text-sm text-primary">Oasis Urbano Inteligente</span>
               </div>
               <p className="text-xs text-on-surface-variant mt-0.5">
-                $7.99 / mes • Próxima renovación: 14 Mayo 2025
+                $31.900 COP / mes • Próxima renovación: 14 Mayo 2025
               </p>
             </div>
             <button
